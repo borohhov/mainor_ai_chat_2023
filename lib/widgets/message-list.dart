@@ -20,8 +20,14 @@ class MessageList extends StatelessWidget {
                 right: rightPadding
               ),
               child: Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8)),border: Border.all(width: 1, color: Colors.black26)),
-                  child: Text(m.message, maxLines: 15, softWrap: true,)),
+                color: m.author == Author.USER ? Colors.yellow : Colors.lightBlueAccent,
+                child: Container(
+                  decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(8)),border: Border.all(width: 1, color: Colors.black26)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(m.message, maxLines: 15, softWrap: true,),
+                    )),
+              ),
             ))],
         );
       }).toList(),

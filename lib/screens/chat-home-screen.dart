@@ -7,18 +7,36 @@ class ChatHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Talk to ChatGPT"),),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Stack(
-          children: [SingleChildScrollView(child: MessageList()),Align(alignment: Alignment.bottomCenter,
+      appBar: AppBar(
+        title: Text("Talk to ChatGPT"),
+      ),
+      body: Stack(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: SingleChildScrollView(child: MessageList()),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              color: Color(0xDAFFCC33),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
-                children: [
-                Expanded(flex: 10, child: TextField()),
-                ElevatedButton(onPressed: null, child: Icon(Icons.airplane_ticket_outlined))
-              ],),)],
-        ),
+                children: const [
+                  Expanded(
+                      flex: 10,
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: TextField(),
+                      )),
+                  ElevatedButton(
+                      onPressed: null,
+                      child: Icon(Icons.airplane_ticket_outlined))
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
