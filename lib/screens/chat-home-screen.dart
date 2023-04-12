@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mainor_chat_2023/widgets/message-input.dart';
 import 'package:mainor_chat_2023/widgets/message-list.dart';
 
 class ChatHomeScreen extends StatelessWidget {
@@ -18,23 +19,7 @@ class ChatHomeScreen extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Container(
-              color: Color(0xDAFFCC33),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: const [
-                  Expanded(
-                      flex: 10,
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: TextField(),
-                      )),
-                  ElevatedButton(
-                      onPressed: null,
-                      child: Icon(Icons.airplane_ticket_outlined))
-                ],
-              ),
-            ),
+            child: MessageInputWidget()
           )
         ],
       ),
