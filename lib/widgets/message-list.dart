@@ -24,7 +24,7 @@ class MessageList extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(bottom: 60.0),
             child: Column(
-              children: snapshot.data!.map((m) {
+              children: (snapshot.data ?? []).map((m) {
                 return ChatMessageWidget(message: m);
               }).toList(),
             ),

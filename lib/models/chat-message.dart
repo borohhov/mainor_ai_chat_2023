@@ -4,6 +4,20 @@ class ChatMessage {
   DateTime dateTime;
 
   ChatMessage(this.message, this.author, this.dateTime);
+
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> map = {};
+    map['message'] = message;
+    map['author'] = author.toString();
+    map['dateTime'] = dateTime.toString();
+    return map;
+  }
+
+  static ChatMessage fromJson(Map<String, dynamic> map) {
+    Author a = Author.values.firstWhere((e) => e.toString() == 'Author.' + map["author"]);
+    return ChatMessage(map['message'], a, DateTime.parse(map["dateTime"]));
+
+  }
 }
 
 
@@ -11,18 +25,4 @@ enum Author {
   CHATGPT, USER
 }
 
-List<ChatMessage> getDemoMessages () {
-  List<ChatMessage> messages = [];
-  messages.add(ChatMessage("Hello", Author.USER, DateTime.now()));
-  messages.add(ChatMessage("I would like to overlay a Round view on top of a background View just like in this screenshot below", Author.CHATGPT, DateTime.now()));
-  messages.add(ChatMessage("How can I put a widget above another widget in Flutter?", Author.USER, DateTime.now()));
-  messages.add(ChatMessage("I would like to overlay a Round view on top of a background View just like in this screenshot below", Author.CHATGPT, DateTime.now()));
-  messages.add(ChatMessage("How can I put a widget above another widget in Flutter?", Author.USER, DateTime.now()));
-  messages.add(ChatMessage("I would like to overlay a Round view on top of a background View just like in this screenshot below", Author.CHATGPT, DateTime.now()));
-  messages.add(ChatMessage("How can I put a widget above another widget in Flutter?", Author.USER, DateTime.now()));
-  messages.add(ChatMessage("I would like to overlay a Round view on top of a background View just like in this screenshot below", Author.CHATGPT, DateTime.now()));
-  messages.add(ChatMessage("How can I put a widget above another widget in Flutter?", Author.USER, DateTime.now()));
-  messages.add(ChatMessage("I would like to overlay a Round view on top of a background View just like in this screenshot below", Author.CHATGPT, DateTime.now()));
-  messages.add(ChatMessage("How can I put a widget above another widget in Flutter?", Author.USER, DateTime.now()));
-  return messages;
-}
+

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "720939380567",
+    "project_id": "mainor-chat-2023-spring",
+    "storage_bucket": "mainor-chat-2023-spring.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720939380567:android:20f18817b12ef061195812",
+        "android_client_info": {
+          "package_name": "com.mainor.mainor_chat_2023"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720939380567-vahg9sd3sn49fcuokqt41mpdf7vvvsov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7jEisybxEAsSrbTCQg1QCAObWCDUjQSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720939380567-vahg9sd3sn49fcuokqt41mpdf7vvvsov.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "720939380567-qvdrb6dj00n8co66hipltacr6f5bd98j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mainor.mainorChat2023"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
