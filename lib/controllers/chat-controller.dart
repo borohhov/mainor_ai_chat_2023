@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mainor_chat_2023/controllers/firebase/firestore-controller.dart';
 import 'package:mainor_chat_2023/controllers/persistence-controller.dart';
+import 'package:mainor_chat_2023/controllers/sqlite/sqlite-controller.dart';
 import 'package:mainor_chat_2023/models/chat-message.dart';
 
 import 'chatgpt-service.dart';
 
 class ChatController extends ChangeNotifier {
   List<ChatMessage> messages = [];
-  PersistenceController db = FirestoreController();
+  PersistenceController db = SqliteController();
 
   Future<void> addMessage(ChatMessage message) async {
     messages.add(message);

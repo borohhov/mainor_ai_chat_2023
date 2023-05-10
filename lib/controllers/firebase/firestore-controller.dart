@@ -25,5 +25,4 @@ class FirestoreController extends PersistenceController {
     await init();
     await db.collection("messages").add(message.toJson());
   }
-  
 }

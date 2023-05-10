@@ -29,7 +29,7 @@ class ChatGptService {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
           'Authorization':
-              'Bearer test',
+              'Bearer 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',
         });
 
     var responseMessage = json.decode(response.body);

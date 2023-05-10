@@ -15,7 +15,10 @@ class MessageList extends StatelessWidget {
         future: Provider.of<ChatController>(context).getAllMessages(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Text("Loading");
+            return const Text("Loading");
+          }
+          else if (snapshot.hasError) {
+            return const Text("Could not load messages");
           }
           scrollController?.animateTo(
               scrollController!.position.maxScrollExtent,

@@ -14,7 +14,7 @@ class ChatMessage {
   }
 
   static ChatMessage fromJson(Map<String, dynamic> map) {
-    Author a = Author.values.firstWhere((e) => e.toString() == 'Author.' + map["author"]);
+    Author a = Author.values.firstWhere((e) => e.toString() == map["author"]);
     return ChatMessage(map['message'], a, DateTime.parse(map["dateTime"]));
 
   }
